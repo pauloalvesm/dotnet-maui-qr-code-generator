@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using QRCodeGenerator.App.Services;
 
 namespace QRCodeGenerator.App
 {
@@ -15,8 +16,10 @@ namespace QRCodeGenerator.App
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<QrCodeService>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
