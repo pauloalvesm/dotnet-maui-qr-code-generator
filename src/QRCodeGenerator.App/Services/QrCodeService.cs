@@ -5,11 +5,11 @@ using System.Text.Json;
 
 namespace QRCodeGenerator.App.Services;
 
-public class QrCodeApiService
+public class QrCodeService
 {
     private readonly HttpClient _httpClient;
 
-    public QrCodeApiService()
+    public QrCodeService()
     {
         _httpClient = new HttpClient
         {

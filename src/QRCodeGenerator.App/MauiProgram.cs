@@ -16,7 +16,7 @@ namespace QRCodeGenerator.App
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddSingleton<QrCodeApiService>();
+            builder.Services.AddSingleton<QrCodeService>();
 
 #if DEBUG
             builder.Logging.AddDebug();
