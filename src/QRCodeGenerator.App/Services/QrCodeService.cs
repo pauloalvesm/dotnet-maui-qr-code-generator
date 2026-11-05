@@ -13,7 +13,7 @@ public class QrCodeService
     {
         _httpClient = new HttpClient
         {
-            BaseAddress = new Uri(QRCodeConstants.ApiBaseUrl)
+            BaseAddress = new Uri(QrCodeConstants.ApiBaseUrl)
         };
     }
 
