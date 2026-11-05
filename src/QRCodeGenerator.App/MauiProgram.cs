@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using QRCodeGenerator.App.Services;
+using QRCodeGenerator.App.Views;
 
 namespace QRCodeGenerator.App
 {
@@ -17,6 +18,7 @@ namespace QRCodeGenerator.App
                 });
 
             builder.Services.AddSingleton<QrCodeService>();
+            builder.Services.AddTransient<QrCodePage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
