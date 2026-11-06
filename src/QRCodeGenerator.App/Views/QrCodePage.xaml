@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QRCodeGenerator.App.Views.QrCodePage"
+             Title="QR Code Generator">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="Enter the QR Code content:"
+                   FontSize="16"
+                   FontAttributes="Bold" />
+
+            <Entry x:Name="ContentEntry"
+                   Placeholder="Type up to 100 characters..."
+                   MaxLength="100" />
+
+            <Button Text="Generate QR Code"
+                    Clicked="OnGenerateClicked"
+                    BackgroundColor="#512BD4"
+                    TextColor="White" />
+
+            <ActivityIndicator x:Name="LoadingIndicator"
+                               IsRunning="False"
+                               IsVisible="False"
+                               Color="#512BD4" />
+
+            <Border Stroke="#CCCCCC"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 10"
+                    Padding="10"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                <Image x:Name="QrCodeImage"
+                       Aspect="AspectFit"
+                       HeightRequest="230"
+                       WidthRequest="230" />
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
