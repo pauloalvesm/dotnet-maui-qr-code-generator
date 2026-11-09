@@ -15,15 +15,18 @@
                    Placeholder="Type up to 100 characters..."
                    MaxLength="100" />
 
-            <Button Text="Generate QR Code"
-                    Clicked="OnGenerateClicked"
-                    BackgroundColor="#512BD4"
-                    TextColor="White" />
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Generate"
+                        Clicked="OnGenerateClicked"
+                        BackgroundColor="#00CD00"
+                        TextColor="#FFFFFF" />
+
+            </HorizontalStackLayout>
 
             <ActivityIndicator x:Name="LoadingIndicator"
                                IsRunning="False"
                                IsVisible="False"
-                               Color="#512BD4" />
+                               Color="#00CD00" />
 
             <Border Stroke="#CCCCCC"
                     StrokeThickness="1"
@@ -38,6 +41,14 @@
                        HeightRequest="230"
                        WidthRequest="230" />
             </Border>
+
+            <Button x:Name="DownloadButton"
+                    Text="Download QR Code"
+                    Clicked="OnDownloadClicked"
+                    BackgroundColor="#007BFF"
+                    TextColor="#FFFFFF"
+                    IsVisible="False"
+                    HorizontalOptions="Center" />
 
         </VerticalStackLayout>
     </ScrollView>
