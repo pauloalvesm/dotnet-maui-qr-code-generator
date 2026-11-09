@@ -86,4 +86,13 @@ public partial class QrCodePage : ContentPage
             await DisplayAlertAsync("Error", $"Could not save the file: {ex.Message}", "OK");
         }
     }
+
+    private void OnClearClicked(object sender, EventArgs e)
+    {
+        ContentEntry.Text = string.Empty;
+        QrCodeImage.Source = null;
+        _currentImageBytes = null;
+        DownloadButton.IsVisible = false;
+        ContentEntry.Focus();
+    }
 }

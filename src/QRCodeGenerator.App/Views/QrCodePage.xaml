@@ -15,13 +15,25 @@
                    Placeholder="Type up to 100 characters..."
                    MaxLength="100" />
 
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Button Text="Generate"
+            <Grid ColumnDefinitions="*, *" 
+                  ColumnSpacing="10" 
+                  HorizontalOptions="Center" 
+                  WidthRequest="320">
+
+                <Button Grid.Column="0"
+                        Text="Generate"
                         Clicked="OnGenerateClicked"
                         BackgroundColor="#00CD00"
-                        TextColor="#FFFFFF" />
+                        TextColor="#FFFFFF"
+                        HeightRequest="45" />
 
-            </HorizontalStackLayout>
+                <Button Grid.Column="1"
+                        Text="Clear"
+                        Clicked="OnClearClicked"
+                        BackgroundColor="#DC3545"
+                        TextColor="#FFFFFF"
+                        HeightRequest="45" />
+            </Grid>
 
             <ActivityIndicator x:Name="LoadingIndicator"
                                IsRunning="False"
