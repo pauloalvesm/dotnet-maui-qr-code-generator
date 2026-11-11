@@ -25,14 +25,24 @@
                         Clicked="OnGenerateClicked"
                         BackgroundColor="#00CD00"
                         TextColor="#FFFFFF"
-                        HeightRequest="45" />
+                        HeightRequest="45"
+                        ContentLayout="Left, 8">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="✓" Color="#FFFFFF" Size="16" />
+                    </Button.ImageSource>
+                </Button>
 
                 <Button Grid.Column="1"
                         Text="Clear"
                         Clicked="OnClearClicked"
                         BackgroundColor="#DC3545"
                         TextColor="#FFFFFF"
-                        HeightRequest="45" />
+                        HeightRequest="45"
+                        ContentLayout="Left, 8">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="✕" Color="#FFFFFF" Size="16" />
+                    </Button.ImageSource>
+                </Button>
             </Grid>
 
             <ActivityIndicator x:Name="LoadingIndicator"
@@ -59,8 +69,14 @@
                     Clicked="OnDownloadClicked"
                     BackgroundColor="#007BFF"
                     TextColor="#FFFFFF"
+                    HeightRequest="45"
+                    ContentLayout="Left, 8"
                     IsVisible="False"
-                    HorizontalOptions="Center" />
+                    HorizontalOptions="Center">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="↓" Color="#FFFFFF" Size="16" />
+                </Button.ImageSource>
+            </Button>
 
         </VerticalStackLayout>
     </ScrollView>
