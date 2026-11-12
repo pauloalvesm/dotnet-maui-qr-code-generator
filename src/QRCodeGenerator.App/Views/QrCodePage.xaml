@@ -15,15 +15,40 @@
                    Placeholder="Type up to 100 characters..."
                    MaxLength="100" />
 
-            <Button Text="Generate QR Code"
-                    Clicked="OnGenerateClicked"
-                    BackgroundColor="#512BD4"
-                    TextColor="White" />
+            <Grid ColumnDefinitions="*, *" 
+                  ColumnSpacing="10" 
+                  HorizontalOptions="Center" 
+                  WidthRequest="320">
+
+                <Button Grid.Column="0"
+                        Text="Generate"
+                        Clicked="OnGenerateClicked"
+                        BackgroundColor="#00CD00"
+                        TextColor="#FFFFFF"
+                        HeightRequest="45"
+                        ContentLayout="Left, 8">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="✓" Color="#FFFFFF" Size="16" />
+                    </Button.ImageSource>
+                </Button>
+
+                <Button Grid.Column="1"
+                        Text="Clear"
+                        Clicked="OnClearClicked"
+                        BackgroundColor="#DC3545"
+                        TextColor="#FFFFFF"
+                        HeightRequest="45"
+                        ContentLayout="Left, 8">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="✕" Color="#FFFFFF" Size="16" />
+                    </Button.ImageSource>
+                </Button>
+            </Grid>
 
             <ActivityIndicator x:Name="LoadingIndicator"
                                IsRunning="False"
                                IsVisible="False"
-                               Color="#512BD4" />
+                               Color="#00CD00" />
 
             <Border Stroke="#CCCCCC"
                     StrokeThickness="1"
@@ -38,6 +63,20 @@
                        HeightRequest="230"
                        WidthRequest="230" />
             </Border>
+
+            <Button x:Name="DownloadButton"
+                    Text="Download QR Code"
+                    Clicked="OnDownloadClicked"
+                    BackgroundColor="#007BFF"
+                    TextColor="#FFFFFF"
+                    HeightRequest="45"
+                    ContentLayout="Left, 8"
+                    IsVisible="False"
+                    HorizontalOptions="Center">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="↓" Color="#FFFFFF" Size="16" />
+                </Button.ImageSource>
+            </Button>
 
         </VerticalStackLayout>
     </ScrollView>
