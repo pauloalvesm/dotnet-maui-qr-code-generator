@@ -9,12 +9,14 @@ public class QrCodeService
 {
     private readonly HttpClient _httpClient;
 
-    public QrCodeService()
+    public QrCodeService(HttpClient httpClient)
     {
-        _httpClient = new HttpClient
+        _httpClient = httpClient;
+
+        if (_httpClient.BaseAddress == null)
         {
-            BaseAddress = new Uri(QrCodeConstants.ApiBaseUrl)
-        };
+            _httpClient.BaseAddress = new Uri(QrCodeConstants.ApiBaseUrl);
+        }
     }
 
     public async Task<string?> GenerateQrCodeAsync(QrCodeModel qrCodeModel)
