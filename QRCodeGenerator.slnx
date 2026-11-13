@@ -4,4 +4,7 @@
       <Deploy Solution="Debug|*" />
     </Project>
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/QRCodeGenerator.Test/QRCodeGenerator.Test.csproj" Id="2328e518-02ce-48c7-b655-d1530a38c57c" />
+  </Folder>
 </Solution>
