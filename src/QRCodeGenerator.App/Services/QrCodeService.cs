@@ -9,6 +9,14 @@ public class QrCodeService
 {
     private readonly HttpClient _httpClient;
 
+    public QrCodeService()
+    {
+        _httpClient = new HttpClient
+        {
+            BaseAddress = new Uri(QrCodeConstants.ApiBaseUrl)
+        };
+    }
+
     public QrCodeService(HttpClient httpClient)
     {
         _httpClient = httpClient;
