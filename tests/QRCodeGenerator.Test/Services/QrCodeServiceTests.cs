@@ -28,7 +28,7 @@ public class QrCodeServiceTests
     public async Task GenerateQrCodeAsync_ShouldReturnBase64_WhenApiReturnsSuccessAndValidJson()
     {
         // Arrange
-        var model = new QrCodeModel { /* preencha com propriedades se houver */ };
+        var model = new QrCodeModel {};
         var jsonResponse = "{\"imageBase64\": \"iVBORw0KGgoAAAANSUhEUg...\"}";
 
         var httpResponse = new HttpResponseMessage(HttpStatusCode.OK)
