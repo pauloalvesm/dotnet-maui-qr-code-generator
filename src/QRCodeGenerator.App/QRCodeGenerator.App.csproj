@@ -75,9 +75,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
-
-	<Target Name="AdbReverseBeforeBuild" BeforeTargets="Build">
-		<Exec Command="&quot;C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe&quot; reverse tcp:5268 tcp:5268" />
+	
+	<Target Name="AdbReverseBeforeBuild" BeforeTargets="Build" Condition="'$(TargetPlatformIdentifier)' == 'android'">
+		<Exec Command="&quot;C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe&quot; reverse tcp:5268 tcp:5268" ContinueOnError="true" />
 	</Target>
 
 </Project>
