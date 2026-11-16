@@ -17,6 +17,16 @@ public class QrCodeService
         };
     }
 
+    public QrCodeService(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+
+        if (_httpClient.BaseAddress == null)
+        {
+            _httpClient.BaseAddress = new Uri(QrCodeConstants.ApiBaseUrl);
+        }
+    }
+
     public async Task<string?> GenerateQrCodeAsync(QrCodeModel qrCodeModel)
     {
         try
